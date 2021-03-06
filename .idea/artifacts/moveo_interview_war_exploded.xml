@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="moveo interview:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/moveo_interview_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="moveo interview/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="moveo interview" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

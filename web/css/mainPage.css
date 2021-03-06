@@ -1,0 +1,165 @@
+body{
+    background-image: url("../resources/music-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+}
+
+.mainDiv:after {
+    text-align: center;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.firstTitle {
+    -webkit-text-fill-color: #000000;
+    font-size: 2.5rem;
+    font-family: Arial Rounded MT;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid: repeat(3, 12vw) / auto-flow;
+}
+
+.row {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid: repeat(1, 12vw) / auto-flow;
+}
+
+.row > .square {
+    height: 9rem;
+    width: 9rem;
+    background: #d4effc;
+    border-color: #000000;
+    border-radius: 0.4rem;
+    border-width: unset;
+    border-style: inset;
+    display: grid;
+}
+
+.square > img {
+    height: 100%;
+    width: 100%;
+}
+
+.row > .clicked_square {
+    border-color: cyan!important;
+    border-width: thick!important;
+}
+
+.clicked_square > img {
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    width: 4rem;
+    min-height: 2rem;
+    background: #d4effc;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+}
+
+.button > img {
+    height: 100%;
+    width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.record {
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    width: 25%;
+    float: left;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.squares {
+    width: 50%;
+    float: left;
+    display: flex;
+    margin: inherit;
+    justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 2.2rem;
+    margin: 0.5rem;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.7rem;
+    width: 1.7rem;
+    left: 0.2rem;
+    bottom: 0.25em;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(1.65rem);
+    -ms-transform: translateX(1.65rem);
+    transform: translateX(1.65rem);
+}
+
+.slider.round {
+    border-radius: 2rem;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
