@@ -6,7 +6,6 @@ const audiosArray = [];
 let mediaRecorder;
 let audioChunks = [];
 let audioUrl;
-let audioRecord;
 let shouldPlay = false;
 
 $(function() {
@@ -96,7 +95,6 @@ function stopRecording() {
         const audioBlob = new Blob(audioChunks);
         audioUrl = URL.createObjectURL(audioBlob);
         $("#audio").attr('src', audioUrl);
-        // audioRecord = new Audio(audioUrl);
     });
 
     mediaRecorder.stop();
@@ -110,38 +108,25 @@ function showPlaySessionButton() {
 }
 
 function playSession() {
-    //const audio = new Audio(document.getElementById("audio"));
     document.getElementById("audio").play();
-    //const audio = new Audio($("#audio"));
-    //audio.play().then(()=>{}).catch(err => console.log(err));
-    //audioRecord = new Audio(audioUrl);
-    //audio.play();
 }
 
 function saveUserActions() {
     localStorage.setItem("buttons", JSON.stringify(squaresArray));
-    //localStorage.setItem("audioRecord", audioRecord);
-    localStorage.setItem("audioUrl", audioUrl);
-    //localStorage.setItem("audioChunks", JSON.stringify(audioChunks));
-    //localStorage.setItem("mediaRecorder", JSON.stringify(mediaRecorder));
+    if (audioUrl) {
+        localStorage.setItem("audioUrl", audioUrl);
+    }
     $("#load").attr("disabled", false);
 }
 
 function RestoreUserActions() {
     squaresArray = JSON.parse(localStorage.getItem("buttons"));
-    let url = localStorage.getItem("audioUrl");
-    //let audioChunksFromStorage = JSON.parse(localStorage.getItem("audioChunks"));
+    const url = localStorage.getItem("audioUrl");
+
     if (url)
     {
         audioUrl = url;
-        //audioChunks = JSON.parse(localStorage.getItem("audioChunks"));
-        //audioChunks = audioChunksFromStorage;
-        //const audioBlob = new Blob(audioChunks);
-        //audioUrl = URL.createObjectURL(audioBlob);
-        //audioRecord = new Audio(audioUrl);
         $("#audio").attr('src', audioUrl);
-        //audioRecord = localStorage.getItem("audioRecord");
-        // mediaRecorder = JSON.parse(localStorage.getItem("mediaRecorder"));
         showPlaySessionButton();
     }
 
@@ -152,9 +137,7 @@ function RestoreUserActions() {
         if(squaresArray[i] === 1) {
             element.childNodes[0].nodeValue = "On";
             element.classList.add("clicked_square");
-        }
-        else
-        {
+        } else {
             element.childNodes[0].nodeValue = "Off";
             element.classList.remove("clicked_square");
         }
