@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Loop Machine</title>
-    <link rel="stylesheet" href="css/mainPage.css">
-    <script type="text/javascript" src="scripts/jquery.js"></script>
-    <script type="text/javascript" src="scripts/page.js"></script>
-</head>
-<body>
-
-    <label class = "firstTitle"> Welcome To Loop Machine </label><br><br>
-    <div class = "mainDiv">
-
-        <div class = "buttons">
-            <button type = "button" class = "button" onclick="playLoops()"><img src="resources/icons/button-play-icon.ico"></button>
-            <button type = "button" class = "button" onclick="stopLoops()"><img src="resources/icons/button-stop-icon.ico"></button>
-            <div class = "record">
-                <label>Record</label>
-                <label class="switch" onchange="handleRecording()">
-                    <input type="checkbox" id = "switch">
-                    <span class="slider round"></span>
-                </label>
-                <button type = "button" class = "button" id = "play-session-button" onclick="playSession()">Play Session</button>
-            </div>
-        </div>
-
-        <div class = "squares">
-            <div class = "container">
-                <div class = "row">
-                    <button class = "square" id = "square1" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-yellow.svg"></button>
-                    <button class = "square" id = "square2" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-orange.svg"></button>
-                    <button class = "square" id = "square3" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-red.svg"></button>
-                </div>
-                <div class = "row">
-                    <button class = "square" id = "square4" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-blue.svg"></button>
-                    <button class = "square" id = "square5" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-purple.svg"></button>
-                    <button class = "square" id = "square6" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-pink.svg"></button>
-                </div>
-                <div class = "row">
-                    <button class = "square" id = "square7" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-turquoise.svg"></button>
-                    <button class = "square" id = "square8" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-lightgreen.svg"></button>
-                    <button class = "square" id = "square9" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-green.svg"></button>
+    <head>
+        <meta charset="UTF-8">
+<!--        <meta http-equiv='cache-control' content='no-cache'>-->
+<!--        <meta http-equiv='expires' content='0'>-->
+<!--        <meta http-equiv='pragma' content='no-cache'>-->
+        <title>Loop Machine</title>
+        <link rel="stylesheet" href="css/mainPage.css">
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/page.js"></script>
+    </head>
+    <body>
+        <label class = "first-title"> Welcome To Loop Machine </label><br><br>
+        <div class = "main-div">
+            <div class = "buttons">
+                <button type = "button" class = "button" onclick="playLoops()"><img src="resources/icons/button-play-icon.ico"></button>
+                <button type = "button" class = "button" onclick="stopLoops()"><img src="resources/icons/button-stop-icon.ico"></button>
+                <div class = "record">
+                    <label>Record</label>
+                    <label class="switch" onchange="handleRecording()">
+                        <input type="checkbox" id = "switch">
+                        <span class="slider round"></span>
+                    </label>
+                    <button type = "button" class = "button" id = "play-session-button" onclick="playSession()">Play Session</button>
+                    <audio id="audio" preload="none" src=""></audio>
                 </div>
             </div>
-        </div>
 
-        <div class = "buttons">
-            <button type = "button" class = "button" onclick="saveUserActions()">Save</button>
-            <button type = "button" class = "button" id = "load" onclick="RestoreUserActions()">Load</button>
-        </div>
+            <div class = "squares">
+                <div class = "container">
+                    <div class = "row">
+                        <button class = "square" id = "square1" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-yellow.svg"></button>
+                        <button class = "square" id = "square2" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-orange.svg"></button>
+                        <button class = "square" id = "square3" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-red.svg"></button>
+                    </div>
+                    <div class = "row">
+                        <button class = "square" id = "square4" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-blue.svg"></button>
+                        <button class = "square" id = "square5" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-purple.svg"></button>
+                        <button class = "square" id = "square6" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-pink.svg"></button>
+                    </div>
+                    <div class = "row">
+                        <button class = "square" id = "square7" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-turquoise.svg"></button>
+                        <button class = "square" id = "square8" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-lightgreen.svg"></button>
+                        <button class = "square" id = "square9" onclick="changeSquareState(id)" >Off<img src="resources/icons/music-icon-green.svg"></button>
+                    </div>
+                </div>
+            </div>
 
-    </div>
-</body>
+            <div class = "buttons">
+                <button type = "button" class = "button" onclick="saveUserActions()">Save</button>
+                <button type = "button" class = "button" id = "load" onclick="RestoreUserActions()">Load</button>
+            </div>
+        </div>
+    </body>
 </html>
